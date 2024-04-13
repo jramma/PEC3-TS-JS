@@ -4,4 +4,4 @@ const c = {
   apple: a,
   banana: b
 };
-const d = c.apple * 4;
+const d = c.orange * 4;

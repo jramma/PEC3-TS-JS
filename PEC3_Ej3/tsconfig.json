@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es2015", 
-    "module": "commonjs", 
-    "outDir": "./dist",   
-    "rootDir": "./src", 
-    "strict": true,
-    "incremental": true,
-    "tsBuildInfoFile": "./buildcache",
+    "target": "es2015", // Especifica la versión de ECMAScript a la que se compilará el código TypeScript.
+    "module": "commonjs", // Especifica el sistema de módulos que se utilizará en el código JavaScript compilado.
+    "outDir": "./dist", // Especifica el directorio en el que se colocarán los archivos JavaScript compilados.
+    "rootDir": "./src", // Especifica el directorio raíz que contiene los archivos TypeScript que se van a compilar.
+    "strict": true, // Habilita una serie de opciones de comprobación de tipos más estrictas en el compilador de TypeScript.
+    "incremental": true, // Habilita la compilación incremental en TypeScript.
+    "tsBuildInfoFile": "./buildcache" // Especifica el archivo en el que TypeScript guardará la información de la compilación incremental.
   }
 }

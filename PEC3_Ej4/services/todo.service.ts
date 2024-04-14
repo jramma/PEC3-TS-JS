@@ -7,10 +7,11 @@ import { Todo } from '../models/todo.model';
  */
 export class TodoService {
   todos: Todo[];
-
+  onTodoListChanged: (todos: Todo[]) => void;
+  
   constructor() {
     this.todos = (JSON.parse(localStorage.getItem("todos")) || []).map(
-      todo => new Todo(todo)
+      (todo:Todo) => new Todo(todo)
     );
   }
 

@@ -1,5 +1,5 @@
-import { TodoService } from '../services/todo.service.ts';
-import { TodoView } from '../views/todo.views.ts';
+import { TodoService } from '../services/todo.service';
+import { TodoView } from '../views/todo.views';
 
 /**
  * @class Controller

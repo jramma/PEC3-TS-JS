@@ -1,6 +1,6 @@
 # Comandos que se han de ejecutar para transpilar y ejecutar la aplicación.
 
-Para transpilar y ejecutar tu aplicación TypeScript utilizando webpack, necesitarás seguir los siguientes pasos:
+Para transpilar y ejecutar una aplicación TypeScript utilizando webpack, necesitaremos seguir los siguientes pasos:
 
 1. Instala las dependencias necesarias:
 
@@ -8,33 +8,33 @@ Para transpilar y ejecutar tu aplicación TypeScript utilizando webpack, necesit
 npm install --save-dev typescript webpack webpack-cli ts-loader
 ```
 
-2. Crea un archivo `webpack.config.js` en la raíz de tu proyecto y añade la siguiente configuración:
+2. Crea un archivo `webpack.config.js` en la raíz del proyecto y añadir la siguiente configuración:
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: "./src/index.ts",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
 };
 ```
 
-3. Asegúrate de que tu archivo `tsconfig.json` está configurado correctamente. Aquí hay un ejemplo de cómo podría verse:
+3. Asegúrarse de que el archivo `tsconfig.json` está configurado correctamente. Aquí hay un ejemplo de cómo podría verse:
 
 ```json
 {
@@ -46,26 +46,32 @@ module.exports = {
     "target": "es5",
     "jsx": "react"
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./*"]
 }
 ```
 
-4. Añade un script a tu archivo `package.json` para ejecutar webpack:
+**A tener en cuenta** >>> La configuración de tsconfig depende de como tengas las carpetas organizadas.
+
+4. Añadir scripts al archivo `package.json` para ejecutar webpack:
 
 ```json
 "scripts": {
-  "build": "webpack"
-}
+        "build": "webpack --mode production",
+        "start": "webpack serve --mode development"
+    }
 ```
 
-5. Ahora puedes transpilar tu aplicación ejecutando el siguiente comando:
+5. Ahora se puede transpilar la aplicación ejecutando el siguiente comando:
 
 ```bash
 npm run build
 ```
 
-Esto creará un archivo `bundle.js` en la carpeta `dist` que contiene tu aplicación transpilada.
+Esto creará un archivo `bundle.js` en la carpeta `dist` que contiene la aplicación transpilada.
 
-Por favor, ten en cuenta que estos pasos asumen que tu punto de entrada es `./src/index.ts` y que quieres que tu código transpilado se coloque en una carpeta `dist`. Si tu configuración es diferente, tendrás que ajustar estos pasos en consecuencia.
+```bash
+npm run start
+```
+
+Para ejecutar
+
